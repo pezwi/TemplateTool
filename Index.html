@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Email Template Generator</title>
+    <title>Package Email Generator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 40px;
+            background-color: #f0f8ff; /* Light blue background */
+            color: #004080; /* Dark blue text */
         }
         .container {
             max-width: 600px;
             margin: auto;
             padding: 20px;
-            border: 1px solid #ccc;
+            border: 1px solid #0073e6; /* Blue border */
             border-radius: 10px;
+            background-color: #e6f2ff; /* Very light blue background */
         }
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
+            color: #004080; /* Dark blue text */
         }
-        input[type="text"], input[type="submit"] {
+        input[type="text"], input[type="submit"], textarea {
             width: 100%;
             padding: 10px;
             margin-bottom: 20px;
-            border: 1px solid #ccc;
+            border: 1px solid #0073e6; /* Blue border */
             border-radius: 5px;
+            background-color: #f0f8ff; /* Light blue background */
+            color: #004080; /* Dark blue text */
         }
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        input[type="submit"] {
+            background-color: #0073e6; /* Blue background */
+            color: white; /* White text */
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #005bb5; /* Darker blue background */
+        }
+        h2, h3 {
+            color: #004080; /* Dark blue text */
         }
     </style>
     <script>
@@ -42,7 +53,6 @@
             var emailTemplate = `
 Hi ${userName},
 
-
 Thank you for requesting ${appName} to be packaged and deployed through Company Portal. To proceed with the packaging, we need access to the application installer.
 
 Could you please download and move the installer for ${appName} to the following path? ${shareLocation}
@@ -50,8 +60,6 @@ Could you please download and move the installer for ${appName} to the following
 Once the installer has been moved, please confirm the transfer by responding to this email.
 
 If you have any questions or require further assistance, please do not hesitate to reach out.
-
-
             `;
             document.getElementById('emailOutput').value = emailTemplate;
         }
